@@ -1,0 +1,63 @@
+﻿
+=== Система ===
+Майкрософт Windows Server 2025 Datacenter Evaluation (сборка 26100); vCPU: 4; ОЗУ: 8,0 ГБ
+
+=== Компоненты ===
+
+Name                  InstallState
+----                  ------------
+FS-Data-Deduplication    Installed
+Windows-Server-Backup    Installed
+
+
+
+=== Тома ===
+
+DriveLetter FileSystemLabel FileSystem SizeGB FreeGB
+----------- --------------- ---------- ------ ------
+          C                 NTFS           79   68,2
+          D                                 0      0
+          E DATA            NTFS          200  176,9
+          G BACKUP          NTFS          300  299,9
+
+
+
+=== Дедупликация тома E: ===
+
+
+Volume             : E:
+Enabled            : True
+UsageType          : Default
+MinimumFileAgeDays : 0
+SavedSpace         : 20071193336
+SavingsRate        : 44
+
+
+
+
+=== Расписания дедупликации ===
+
+Name                                 Type Enabled Days     Start              DurationHours
+----                                 ---- ------- ----     -----              -------------
+BackgroundOptimization       Optimization   False                                          
+WeeklyGarbageCollection GarbageCollection   False Saturday 27.09.2026 2:45:00 48           
+WeeklyScrubbing                 Scrubbing   False Saturday 27.09.2026 3:45:00 72           
+
+
+
+=== Состояние (Get-DedupStatus) ===
+
+
+Volume                        : E:
+FreeSpace                     : 189992009728
+SavedSpace                    : 20071193336
+OptimizedFilesCount           : 1222
+OptimizedFilesSize            : 42949672960
+InPolicyFilesCount            : 1222
+InPolicyFilesSize             : 42949672960
+LastOptimizationTime          : 26.09.2026 22:00:39
+LastOptimizationResultMessage : Операция успешно завершена.
+
+
+
+
